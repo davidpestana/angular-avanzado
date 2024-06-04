@@ -1,4 +1,21 @@
-¡Claro! A continuación, te proporciono una guía paso a paso para crear una aplicación en Angular con lazy loading, que muestre dos páginas: una para "Personajes" y otra para "Localización", usando la API de Rick y Morty y aplicando el patrón de presentación-contenedor.
+
+
+¡Claro! Aquí tienes el laboratorio completo con una introducción y objetivos claros. Puedes copiar y pegar todo el contenido para guiar a los alumnos.
+
+---
+
+## Laboratorio: Creación de una Aplicación Angular con Lazy Loading y el Patrón de Presentación-Contenedor
+
+### Introducción
+
+En este laboratorio, aprenderemos a crear una aplicación Angular con dos páginas: una para listar personajes y otra para listar localizaciones de la serie Rick y Morty. Utilizaremos lazy loading para cargar los módulos de forma eficiente y aplicaremos el patrón de presentación-contenedor para organizar nuestro código. Además, estilizaremos nuestra aplicación para que tenga una apariencia atractiva.
+
+### Objetivos
+
+1. **Crear una aplicación Angular** que utilice lazy loading para cargar módulos de forma eficiente.
+2. **Implementar el patrón de presentación-contenedor** para separar la lógica de negocio de la presentación.
+3. **Consumir la API de Rick y Morty** para obtener datos de personajes y localizaciones.
+4. **Aplicar estilos CSS** para mejorar la apariencia de la aplicación.
 
 ### Paso 1: Configuración del Proyecto Angular
 
@@ -107,6 +124,14 @@ export class AppRoutingModule { }
     }
     ```
 
+    ```html
+    <!-- src/app/features/characters/container/container.component.html -->
+    <div class="container">
+      <h2>Characters</h2>
+      <app-characters-presenter [characters]="characters$ | async"></app-characters-presenter>
+    </div>
+    ```
+
 2. **Presentador de Personajes** (`src/app/features/characters/presenter/presenter.component.ts`):
     ```typescript
     import { Component, Input } from '@angular/core';
@@ -123,8 +148,8 @@ export class AppRoutingModule { }
 
     ```html
     <!-- src/app/features/characters/presenter/presenter.component.html -->
-    <div *ngIf="characters.results">
-      <div *ngFor="let character of characters.results">
+    <div class="character-grid" *ngIf="characters.results">
+      <div class="character-card" *ngFor="let character of characters.results">
         <h3>{{ character.name }}</h3>
         <img [src]="character.image" alt="{{ character.name }}">
       </div>
@@ -150,6 +175,14 @@ export class AppRoutingModule { }
     }
     ```
 
+    ```html
+    <!-- src/app/features/locations/container/container.component.html -->
+    <div class="container">
+      <h2>Locations</h2>
+      <app-locations-presenter [locations]="locations$ | async"></app-locations-presenter>
+    </div>
+    ```
+
 4. **Presentador de Localizaciones** (`src/app/features/locations/presenter/presenter.component.ts`):
     ```typescript
     import { Component, Input } from '@angular/core';
@@ -166,8 +199,8 @@ export class AppRoutingModule { }
 
     ```html
     <!-- src/app/features/locations/presenter/presenter.component.html -->
-    <div *ngIf="locations.results">
-      <div *ngFor="let location of locations.results">
+    <div class="location-list" *ngIf="locations.results">
+      <div class="location-card" *ngFor="let location of locations.results">
         <h3>{{ location.name }}</h3>
         <p>{{ location.type }} - {{ location.dimension }}</p>
       </div>
@@ -243,6 +276,8 @@ export class AppRoutingModule { }
         BrowserModule,
         AppRoutingModule,
         HttpClientModule
+
+
       ],
       providers: [],
       bootstrap: [AppComponent]
@@ -250,7 +285,74 @@ export class AppRoutingModule { }
     export class AppModule { }
     ```
 
-### Paso 7: Ejecución del Proyecto
+### Paso 7: Estilización con CSS
+
+1. **Estilos globales** (`src/styles.css`):
+    ```css
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .character-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .character-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .character-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .character-card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .location-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .location-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .location-card:hover {
+      transform: translateY(-10px);
+    }
+    ```
+
+### Paso 8: Ejecución del Proyecto
 
 Inicia el servidor de desarrollo:
 ```sh
@@ -261,4 +363,4 @@ Abre tu navegador y navega a `http://localhost:4200/characters` para ver la list
 
 ### Conclusión
 
-Con esto, has creado una aplicación Angular con lazy loading y aplicado el patrón de presentación-contenedor. Puedes seguir mejorando el proyecto agregando más funcionalidades, estilos y manejo de errores.
+Con esto, has creado una aplicación Angular con lazy loading, aplicando el patrón de presentación-contenedor y añadiendo estilos CSS para mejorar la apariencia. Puedes seguir mejorando el proyecto agregando más funcionalidades, estilos y manejo de errores.

@@ -1,9 +1,3 @@
-
-
-¡Claro! Aquí tienes el laboratorio completo con una introducción y objetivos claros. Puedes copiar y pegar todo el contenido para guiar a los alumnos.
-
----
-
 ## Laboratorio: Creación de una Aplicación Angular con Lazy Loading y el Patrón de Presentación-Contenedor
 
 ### Introducción

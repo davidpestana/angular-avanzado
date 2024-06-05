@@ -1,7 +1,3 @@
-¡Perfecto! A continuación, presento un laboratorio enfocado en refactorizar el servicio para utilizar `BehaviorSubject` con el objetivo de gestionar la ventana de paginación, mejorando así la eficiencia de nuestra aplicación al implementar un sistema de caché.
-
----
-
 ## Laboratorio: Refactorización del Servicio de Angular con `BehaviorSubject` para Caché y Paginación
 
 ### Descripción
@@ -214,5 +210,3 @@ Abre tu navegador y navega a `http://localhost:4200/characters` para ver la list
 ### Conclusión
 
 En este laboratorio, hemos refactorizado el servicio de Angular para utilizar `BehaviorSubject` y gestionar el caché y la paginación. Esto mejora la eficiencia de la aplicación al reducir las solicitudes innecesarias a la API, proporcionando una mejor experiencia de usuario.
-
----

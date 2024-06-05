@@ -39,10 +39,10 @@ En este laboratorio, aprenderemos a crear una aplicación Angular con dos págin
 
 2. **Crear componentes para la presentación y el contenedor en cada módulo**:
     ```sh
-    ng generate component features/characters/container
-    ng generate component features/characters/presenter
-    ng generate component features/locations/container
-    ng generate component features/locations/presenter
+    ng generate component features/characters/characters-container
+    ng generate component features/characters/characters-presenter
+    ng generate component features/locations/locations-container
+    ng generate component features/locations/locations-presenter
     ```
 
 ### Paso 3: Configuración de Lazy Loading y Rutas

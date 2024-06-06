@@ -4,10 +4,10 @@
 Este curso está dirigido a Programadores y Analistas Web con experiencia previa en Angular.
 
 #### **Requisitos previos**
-Para participar en este curso, los alumnos deben tener conocimientos consolidados o experiencia en Angular, o haber completado con éxito el curso Angular 15 Básico.
+Para participar en este curso, los alumnos deben tener conocimientos consolidados o experiencia en Angular, o haber completado con éxito el curso Angular Básico.
 
 #### **Objetivos**
-Al finalizar el curso, los alumnos serán capaces de maximizar sus habilidades en Angular 15 para desarrollar, testear y mantener aplicaciones web de alta calidad.
+Al finalizar el curso, los alumnos serán capaces de maximizar sus habilidades en Angular para desarrollar, testear y mantener aplicaciones web de alta calidad.
 
 #### **Contenido**
 

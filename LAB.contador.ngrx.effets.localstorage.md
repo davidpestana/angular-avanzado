@@ -16,7 +16,9 @@ cd counter-app
 Instala las dependencias de NGRX:
 
 ```sh
-npm install @ngrx/store @ngrx/effects @ngrx/store-devtools
+ng add @ngrx/store@latest
+ng add @ngrx/store-devtools@latest
+ng add @ngrx/schematics@latest
 ```
 
 ### Paso 3: Configurar NGRX

@@ -28,8 +28,8 @@ Crea los archivos necesarios para NGRX:
 ```sh
 ng generate store AppState --root --module app.module.ts
 ng generate action counter --group
-ng generate reducer counter --reducersPath store/reducers
-ng generate effect counter --root
+ng generate reducer counter store/reducers
+ng generate effect counter --root --module app.module.ts
 ```
 
 ### Paso 4: Definir el estado y las acciones
